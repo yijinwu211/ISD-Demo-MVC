@@ -8,6 +8,10 @@ import uts.isd.model.Calculator;
 /**
  *
  * @author George
+ * 
+ * This class tests the functions of the Calculator class in the model.
+ * JUnit tests assert the result of each function. Replicate these tests for the DBManager class CRUD functions
+ * To execute the tests, right-click on this class and choose 'Test File' or use the TestRunner class
  */
 public class CalculatorTest {
 

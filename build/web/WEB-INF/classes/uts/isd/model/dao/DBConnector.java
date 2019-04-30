@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ * Initiate connection with the jdbc derby database and initialize the super class conn field
+ * 
  * @author George
  */
 public class DBConnector extends DB{

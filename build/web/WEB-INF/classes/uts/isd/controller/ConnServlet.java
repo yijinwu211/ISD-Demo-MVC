@@ -2,6 +2,8 @@
  * A Servlet instance will be created once the project is deployed.
  * The init() method will create an instance of DBConnector to be used for the session.
  * database conenction will be closed automatically once the servelt is destroyed 
+ * The servlet provide the application with a connection pool. 
+ * One instance of the db connection to be used across the session.
  */
 package uts.isd.controller;
 

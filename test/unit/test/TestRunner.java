@@ -6,6 +6,8 @@ import org.junit.runner.notification.Failure;
 /**
  *
  * @author George
+ * 
+ * A custom testing class that activates all the JUnit tests of CalculatorTest class and display the test results.
  */
 public class TestRunner {
     public static void main(String[] args) {

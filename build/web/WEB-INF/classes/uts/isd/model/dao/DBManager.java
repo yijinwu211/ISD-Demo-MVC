@@ -6,6 +6,12 @@ import java.sql.*;
 /**
  *
  * @author George
+ * 
+ * DBManager is the primary DAO class to interact with the database and perform CRUD operations with the db.
+ * Firstly, complete the existing methods and implement them into the application.
+ * 
+ * So far the application uses the Read and Create operations in the view.
+ * Secondly, improve the current view to enable the Update and Delete operations.
  */
 public class DBManager {
 
@@ -17,50 +23,36 @@ public class DBManager {
 
     //Find student by ID in the database
     public Student findStudent(String ID, String password) throws SQLException {
-        String fetch = "select * from ISDUSER.Students where ID = '" + ID + "' and password='" + password + "'";
-        ResultSet rs = st.executeQuery(fetch);
-
-        while (rs.next()) {
-            String userID = rs.getString(1);
-            String userPass = rs.getString(4);
-            if (userID.equals(ID) && userPass.equals(password)) {
-                String userEmail = rs.getString(2);
-                String userName = rs.getString(3);                
-                String userDOB = rs.getString(5);
-                String favcol = rs.getString(6);
-                return new Student(userID, userEmail, userName, userPass, userDOB, favcol);
-            }
-        }
+        //setup the select sql query string
+        //execute this query using the statement field
+        //add the results to a ResultSet
+        //search the ResultSet for a student using the parameters
+        
         return null;
     }
 
     //Check if a student exist in the database
     public boolean checkStudent(String ID, String password) throws SQLException {
-        String fetch = "select * from ISDUSER.Students where ID = '" + ID + "' and password='" + password + "'";
-        ResultSet rs = st.executeQuery(fetch);
-
-        while (rs.next()) {
-            String userID = rs.getString(1);
-            String userPass = rs.getString(4);
-            if (userID.equals(ID) && userPass.equals(password)) {
-                return true;
-            }
-        }
+       //setup the select sql query string
+        //execute this query using the statement field
+        //add the results to a ResultSet
+        //search the ResultSet for a student using the parameters
+        //verify if the student exists
         return false;
     }
 
     //Add a student-data into the database
     public void addStudent(String ID, String email, String name, String password, String dob, String favcol) throws SQLException {        
-        st.executeUpdate("INSERT INTO ISDUSER.Students " + "VALUES ('" + ID + "', '" + email + "', '" + name + "', '" + password + "', '" + dob + "', '" + favcol + "')");
+        //code for add-operation
     }
 
     //update a student details in the database
     public void updateStudent(String ID, String email, String name, String password, String dob, String favcol) throws SQLException {
-        st.executeUpdate("UPDATE ISDUSER.Students SET EMAIL='" + email + "',NAME='" + name + "',PASSWORD='" + password + "',dob='" + dob + "',FAVORITECOLOR='" + favcol + "' WHERE ID='" + ID + "'");
+        //code for update-operation
     }
     
     //delete a student from the database
     public void deleteStudent(String ID) throws SQLException{
-        st.executeUpdate("DELETE FROM ISDUSER.Students WHERE ID='" + ID + "'");
+        //code for delete-operation
     }
 }

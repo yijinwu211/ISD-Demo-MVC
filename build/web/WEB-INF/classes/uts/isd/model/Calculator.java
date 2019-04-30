@@ -1,8 +1,11 @@
 package uts.isd.model;
 
 /**
- *
+ * 
  * @author George
+ * 
+ * This is a simple calculator class to be used for testing purposes
+ * JUnit tests defined in the class unit.test.CalculatorTest will verify the functions automatically
  */
 public class Calculator {
     

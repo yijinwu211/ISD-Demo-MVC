@@ -1,3 +1,11 @@
+
+/*This stand-alone application test the connection to the db once setup in DB class
+ *It performs an add-function of a Student to the database
+ *To use this app, you should complete the addStudent method in DBManager class
+ *
+ *
+ *@author George
+**/
 package uts.isd.controller;
 
 import uts.isd.model.dao.DBManager;
@@ -11,9 +19,9 @@ public class TestDB {
     
     public static void main(String[] args) {
         try {
-            DBConnector connector = new DBConnector();
-            Connection conn = connector.openConnection();
-            DBManager db = new DBManager(conn);
+            DBConnector connector = new DBConnector(); //Create a connection and initialize DB conn-field
+            Connection conn = connector.openConnection(); //Get the protected connection instance from DB superclass to share for the application classes
+            DBManager db = new DBManager(conn); //DBManger instance provide users with access to CRUD operations
             
             int key = (new Random()).nextInt(999999);
             String ID = "" + key; 
@@ -27,9 +35,9 @@ public class TestDB {
             String dob = in.nextLine();
             System.out.print("Student favorite color: ");
             String favcol = in.nextLine();
-            db.addStudent(ID, email, name, password, dob, favcol);
+            db.addStudent(ID, email, name, password, dob, favcol); //This method must be completed in DBManager class
             System.out.println("Student is added to the database.");
-            connector.closeConnection();
+            connector.closeConnection(); //Professional practice is to close connection to database once operations are finalized
             
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(TestDB.class.getName()).log(Level.SEVERE, null, ex);

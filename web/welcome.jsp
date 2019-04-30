@@ -38,10 +38,11 @@
         <p>Your password is: <%=password%></p>        
         <p>Your Favorite color is: <%=favcol%></p>
         <p>Your ID is: <%=ID%></p>
-        <%            
-            DBManager manager = (DBManager)session.getAttribute("manager");
+        <%    
+            //Activate the database add-function once DBManager functions are completed
+            //DBManager manager = (DBManager)session.getAttribute("manager");
             Student student = new Student(ID,name,email,password,dob,favcol);
-            manager.addStudent(ID, email, name, password, dob, favcol);
+            //manager.addStudent(ID, email, name, password, dob, favcol);
             session.setAttribute("student",student);
         %>
         <button class="button" type="button" onclick="location.href = 'main.jsp'" > Main Page </button>

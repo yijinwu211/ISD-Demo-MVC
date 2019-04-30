@@ -18,11 +18,12 @@
     <body>
 
         <%
-            DBManager manager = (DBManager)session.getAttribute("manager");
+            //Activate the database search-validate once DBManager functions are completed
+            //DBManager manager = (DBManager)session.getAttribute("manager");
             String ID = request.getParameter("ID");
             String password = request.getParameter("password");            
-            Student student = manager.findStudent(ID, password);
-               
+            //Student student = manager.findStudent(ID, password);
+            Student student = new Student("ID","name","email","password","dob","white");
             if (student != null) {
                 session.setAttribute("studentLogin", student);
                 response.sendRedirect("loginWelcome.jsp");                        
