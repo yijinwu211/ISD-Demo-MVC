@@ -25,7 +25,7 @@
                     <td><input class="button" type="submit" value="Login"> 
                         &nbsp; 
                         <button class="button" type="button" onclick="location.href = 'index.jsp'" > Home Page </button>
-                    </td>.
+                    </td>
                 </tr>
             </table>
         </form>
