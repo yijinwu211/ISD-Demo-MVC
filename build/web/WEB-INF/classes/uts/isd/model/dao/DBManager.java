@@ -44,6 +44,7 @@ public class DBManager {
     //Add a student-data into the database
     public void addStudent(String ID, String email, String name, String password, String dob, String favcol) throws SQLException {        
         //code for add-operation
+        st.executeUpdate("sql query");
     }
 
     //update a student details in the database
