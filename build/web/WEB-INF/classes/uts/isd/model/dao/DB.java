@@ -3,11 +3,11 @@ package uts.isd.model.dao;
 import java.sql.Connection;
 
 /**
- * Super class of DAO classes that manager connection and operation with the database
+ * Super class of DAO classes that manages connection and operation with the database
  * @author George
  */
 public abstract class DB {
-    protected String URL = "";//replace empty-string with jdbc:derby local host url
+    protected String URL = "jdbc:derby://localhost:1527/";//replace empty-string with jdbc:derby local host url
     protected String db = "studentsdb";//name of the database
     protected String dbuser = "isduser";//db root user
     protected String dbpass = "admin"; //db root password
